@@ -2,5 +2,3 @@ streamlit
 google-genai
 gTTS
 moviepy
-pillow
-imagemagick
