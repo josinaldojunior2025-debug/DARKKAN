@@ -1,4 +1,6 @@
 streamlit
 google-genai
 gTTS
-moviepy==2.1.1
+moviepy
+pillow
+imagemagick
