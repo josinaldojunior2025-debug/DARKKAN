@@ -31,20 +31,22 @@ if st.button("🚀 GERAR VÍDEO PROFISSIONAL"):
             clips_de_video = []
             
             for i, frase in enumerate(frases):
-                # 1. Áudio da frase
+                # 1. Áudio
                 audio_path = f"audio_{i}.mp3"
-                gTTS(text=frase, lang='pt', tld='com.br').save(audio_path)
+                tts = gTTS(text=frase, lang='pt', tld='com.br')
+                tts.save(audio_path)
                 audio_clip = AudioFileClip(audio_path)
                 
-                # 2. Imagem da frase via IA
-                img_path = gerar_imagem_ia(f"{tema}, cinematic, dark, hyperrealistic", i)
+                # 2. Imagem IA
+                img_path = gerar_imagem_ia(f"{tema}, cinematic, highres", i)
                 
                 # 3. Criar Clip da Cena
                 img_clip = ImageClip(img_path).with_duration(audio_clip.duration)
                 txt_clip = TextClip(
-                    text=frase, font_size=60, color='yellow', stroke_color='black', stroke_width=2,
-                    method='caption', size=(int(img_clip.w*0.8), None)
-                ).with_duration(audio_clip.duration).with_position('center')
+                    text=frase.upper(), font_size=50, color='yellow',
+                    method='caption', size=(int(img_clip.w*0.8), None),
+                    stroke_color='black', stroke_width=2
+                ).with_duration(audio_clip.duration).with_position(('center', 0.8), relative=True)
                 
                 cena = CompositeVideoClip([img_clip, txt_clip]).with_audio(audio_clip)
                 clips_de_video.append(cena)

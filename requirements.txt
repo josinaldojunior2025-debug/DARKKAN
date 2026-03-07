@@ -6,3 +6,5 @@ requests
 pillow
 imageio[pyav]
 imageio[ffmpeg]
+pyav
+av
