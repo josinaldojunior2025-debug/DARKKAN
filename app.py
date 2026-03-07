@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import requests
+import imageio
 from gtts import gTTS
 from moviepy import ImageClip, AudioFileClip, TextClip, CompositeVideoClip, concatenate_videoclips
 

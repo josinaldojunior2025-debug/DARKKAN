@@ -3,3 +3,6 @@ google-genai
 gTTS
 moviepy
 requests
+pillow
+imageio[pyav]
+imageio[ffmpeg]
