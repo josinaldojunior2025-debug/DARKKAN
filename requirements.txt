@@ -4,3 +4,4 @@ moviepy
 requests
 pillow
 elevenlabs
+imageio
