@@ -1,10 +1,5 @@
 streamlit
-google-genai
 gTTS
 moviepy
 requests
 pillow
-imageio[pyav]
-imageio[ffmpeg]
-pyav
-av
