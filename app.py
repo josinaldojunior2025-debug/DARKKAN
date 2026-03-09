@@ -60,9 +60,9 @@ if st.button("🎬 GERAR FILME DARK"):
                 img_path = gerar_imagem_ia(tema, i)
                 
                 # Efeito de movimento
-                img_clip = ImageClip(img_path).with_duration(audio_clip.duration).with_effects([
-                    lambda clip: clip.resized(lambda t: 1 + 0.04 * t)
-                ])
+                img_clip = ImageClip(img_path).with_duration(audio_clip.duration).resize(
+                    lambda t: 1 + 0.04 * t
+                )
                 
                 # Legendas
                 txt_clip = TextClip(
