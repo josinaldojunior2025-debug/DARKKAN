@@ -3,3 +3,4 @@ gTTS
 moviepy
 requests
 pillow
+elevenlabs
